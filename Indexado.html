@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>San Valentín 💖</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(#f4a6c1, #f8c7d8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    text-align: center;
+}
+
+/* OCULTOS */
+#contenedorSobre,
+#contenedorCarta,
+#imagenNo,
+#fotoFinal {
+    display: none;
+}
+
+/* GLOBO */
+.globo {
+    background-color: #d62828;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 25px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* BOTONES */
+button {
+    background-color: #d62828;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button.volver {
+    background-color: #555;
+}
+
+button.next {
+    background-color: #ff4d6d;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* SOBRE */
+.sobre {
+    width: 220px;
+    height: 150px;
+    background-color: #d62828;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+}
+
+.sobre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 110px solid transparent;
+    border-right: 110px solid transparent;
+    border-top: 75px solid #b71c1c;
+}
+
+.sobre p {
+    color: white;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+/* CARTA */
+.carta {
+    width: 90%;
+    max-width: 420px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background-color: white;
+    padding: 35px 25px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    line-height: 1.7;
+    text-align: left;
+}
+
+.carta h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* FOTO FINAL */
+#fotoFinal img {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- INICIO -->
+<div class="contenedor" id="inicio">
+    <div class="globo">¿Te gustaría ser mi San Valentín? 💘</div><br>
+    <button onclick="mostrarSobre()">Sí 🙂‍↕️</button>
+    <button onclick="mostrarNo()">No 😔</button>
+</div>
+
+<!-- SOBRE -->
+<div class="contenedor" id="contenedorSobre">
+    <div class="sobre" onclick="abrirCarta()">
+        <p>💌 Tócame</p>
+    </div>
+    <br>
+    <button class="volver" onclick="volver()">⬅ Volver atrás</button>
+</div>
+
+<!-- CARTA -->
+<div class="contenedor" id="contenedorCarta">
+    <div class="carta">
+        <h3>💖 Para vos</h3>
+
+        <p>
+        Amor mío,<br><br>
+
+        La verdad es que no soy muy buena escribiendo cartas, pero cuando se trata de vos, quiero intentarlo.<br><br>
+
+        Cuando estoy con vos, los pesares se hacen más livianos. Incluso cuando estoy cansada o con sueño, mis fuerzas se renuevan solo para hablarte un rato más. Con vos siempre hay una sonrisa pintada en mis labios. Me haces sentir segura, en paz, en casa… incluso a la distancia.<br><br>
+
+        Con vos aprendí que cuando hay amor y ganas mutuas, todo es posible. Admiro profundamente esa forma tuya de mirar el lado bueno incluso cuando las cosas te decepcionan. A pesar de todo, siempre das lo mejor de vos. Eso habla de tu corazón, y es una de las cosas que más amo.<br><br>
+
+        Quiero que sepas, y que nunca se te olvide, que significás muchísimo para mí. Ocupás mis pensamientos y mi corazón. Amado mío, sos mi lugar seguro.<br><br>
+
+        Me encanta cómo nuestros sentimientos fueron creciendo al mismo tiempo, cómo sin darnos cuenta empezamos a sentir lo mismo el uno por el otro. Fue algo tan recíproco, tan en sintonía, que todavía me parece increíble.<br><br>
+
+        Me imagino viviendo cada día a tu lado, eligiéndote y amándote cada día. Cocinándote tus comidas favoritas, compartiendo lo que te gusta, lo que te motiva, lo que te llena. Me imagino abrazados, pasando el próximo San Valentín juntos, cocinando, comiendo chocolates, teniendo una cita o simplemente quedándonos en casa. Me imagino despertando a tu lado y diciéndote “te amo” cada mañana.<br><br>
+
+        Espero seguir construyendo con vos muchísimos recuerdos más, anécdotas hermosas que algún día podamos contar y reírnos juntos.<br><br>
+
+        Gracias por ser vos.<br>
+        Te elijo hoy y todos los días.<br><br>
+
+        Feliz San Valentín, amor.<br>
+        Con todo mi corazón 💖
+        </p>
+
+        <br>
+        <button class="next" onclick="mostrarFoto()">Next →</button>
+        <br>
+        <button class="volver" onclick="volver()">⬅ Volver atrás</button>
+    </div>
+</div>
+
+<!-- FOTO FINAL -->
+<div class="contenedor" id="fotoFinal">
+    <img src="https://i.ibb.co/WvCMQQ0K/43-sin-t-tulo-20260214091336.jpg" alt="San Valentín">
+    <br>
+    <button class="volver" onclick="volver()">⬅ Volver al inicio</button>
+</div>
+
+<!-- NO -->
+<div class="contenedor" id="imagenNo">
+    <img src="https://i.ibb.co/WvCMQQ0K/43-sin-t-tulo-20260214091336.jpg" alt="San Valentín">
+    <br>
+    <button class="volver" onclick="volver()">⬅ Volver atrás</button>
+</div>
+
+<script>
+function ocultarTodo() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("contenedorSobre").style.display = "none";
+    document.getElementById("contenedorCarta").style.display = "none";
+    document.getElementById("imagenNo").style.display = "none";
+    document.getElementById("fotoFinal").style.display = "none";
+}
+
+function mostrarSobre() {
+    ocultarTodo();
+    document.getElementById("contenedorSobre").style.display = "block";
+}
+
+function abrirCarta() {
+    ocultarTodo();
+    document.getElementById("contenedorCarta").style.display = "block";
+}
+
+function mostrarNo() {
+    ocultarTodo();
+    document.getElementById("imagenNo").style.display = "block";
+}
+
+function mostrarFoto() {
+    ocultarTodo();
+    document.getElementById("fotoFinal").style.display = "block";
+}
+
+function volver() {
+    ocultarTodo();
+    document.getElementById("inicio").style.display = "block";
+}
+</script>
+
+</body>
+</html>
